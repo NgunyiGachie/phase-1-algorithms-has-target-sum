@@ -1,17 +1,33 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seen = new Set();
+  for (const num of array) {
+   const diff = target - num;
+
+     if (seen.has(diff)) {
+        return true;
+    }
+
+    seen.add(num);
 }
 
+
+return false;
+}
+console.log(hasTargetSum([3, 8, 12, 4, 11, 7], 10));
+console.log(hasTargetSum([22, 19, 4, 6, 30], 25));
+console.log(hasTargetSum([1, 2, 5], 4));
 /* 
-  Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
-  Add your pseudocode here
+  Input: Find two numbers in an array when added equals the target.
+  Output: Return true if there are two numbers that equal the target in the array and false if not.
 */
 
 /*
-  Add written explanation of your solution here
+  Create a new set of seen numbers using the declaration cost seen = new Set();
+  Iterate through the array using the for loop. The function then calculates a difference between the target number and the current number. If the difference is in the set, the function returns true. If the difference is not there, it is added to the current set.
 */
 
 // You can run `node index.js` to view these console logs
